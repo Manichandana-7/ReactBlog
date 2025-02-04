@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 function UniqBlog({ blog }) {
     function closeBlog() {
@@ -11,7 +11,7 @@ function UniqBlog({ blog }) {
                 <img 
                     src={blog.imgurl} 
                     alt="Blog Image" 
-                    className="w-1/2 h-auto object-contain rounded-full mr-8" 
+                    className="w-1/2 h-auto object-contain rounded-full " 
                 />
                 <div className="w-1/2 flex flex-col justify-center items-center">
                     <h1 className="text-3xl font-bold text-sky-800">{blog.title}</h1>

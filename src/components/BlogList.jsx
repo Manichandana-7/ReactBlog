@@ -11,9 +11,10 @@ const BlogList = () => {
 
   return (
     <div className="p-10 flex flex-wrap gap-5 justify-center">
+    
       {blogs.length > 0 ? (
         blogs.map((blog, index) => (
-          <Blogcard key={index} blogs={blogs} setBlogs={setBlogs} id={blog.id} title={blog.title} desc={blog.desc} imgurl={blog.imgurl} />
+          <Blogcard key={index} blogs={blogs} setBlogs={setBlogs} id={blog.id} title={blog.title} desc={blog.desc} imgurl={blog.imgurl} count={blog.count} />
         ))
       ) : (
         <p>No blogs available. Add some blogs!</p>

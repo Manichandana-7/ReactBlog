@@ -4,15 +4,19 @@ const Addblog = () => {
     const [title,setTitle]=useState("");
     const [desc,setDesc]=useState("");
     const [imgurl,setImgurl]=useState("");
+    const [count,setCount] =useState(0);
+    // const [id,setId] =useState("");
     function handleAddBlog(){
         if (title && desc && imgurl) {
-            const newBlog = { title, desc, imgurl };
+            const newBlog = { id:Date.now(),title, desc, imgurl ,count};
             const existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
             existingBlogs.push(newBlog);
             localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+            
             setTitle("");
             setDesc("");
             setImgurl("");
+            setCount(0);
             alert("Blog added successfully!");
         } else {
             alert("Please fill all fields.");

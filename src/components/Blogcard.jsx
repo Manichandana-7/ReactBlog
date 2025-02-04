@@ -33,6 +33,7 @@ const Blogcard = (props) => {
         <h1 className="text-3xl font-bold text-sky-800 m-3">{props.title}</h1>
         <img src={props.imgurl} alt="Blog Image" className="w-full h-70 object-cover rounded-full mx-auto" />
         <div className="mt-3 flex justify-between gap-4">
+                   
           <button  className="px-5 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500">Edit</button>
           <button onClick={()=>{viewBlog(props.id)}} className="px-5 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500">
           {selectBlog && selectBlog.id === props.id && (

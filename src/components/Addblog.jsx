@@ -4,13 +4,38 @@ const Addblog = () => {
     const [title,setTitle]=useState("");
     const [desc,setDesc]=useState("");
     const [imgurl,setImgurl]=useState("");
-    
+    function handleAddBlog(){
+        if (title && desc && imgurl) {
+            const newBlog = { title, desc, imgurl };
+            const existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            existingBlogs.push(newBlog);
+            localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+            setTitle("");
+            setDesc("");
+            setImgurl("");
+            alert("Blog added successfully!");
+        } else {
+            alert("Please fill all fields.");
+        }
+        window.location.href='/'
+    }
     return (
         <>
             <NavBar/>
-            <div>
-                <label htmlFor=""></label>
+            <div className="flex justify-center items-center m-10">
+            <div className="flex flex-col justify-center items-center p-10 border border-gray-300 rounded-lg shadow-xl space-y-5 w-1/2 h-1/2">
+                <h1 className="font-bold text-2xl text-center text-sky-800 ">ADD A BLOG</h1>
+                <label className="text-xl block font-bold mb-2 self-start text-sky-800" >Title:</label>
+                <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Enter the title" className="border-1 rounded-md w-full p-2 bg-gray-50"/>
+                <label className="text-xl block font-bold mb-2 text-sky-800 self-start" >Description:</label>
+                <textarea rows="8" onChange={(e) => setDesc(e.target.value)} className="border-1 rounded-md w-full p-2 mb-5 bg-gray-50" placeholder="Enter the description of blog"></textarea>
+                <label className="text-xl block font-bold mb-2 text-sky-800 self-start">Image URL:</label>
+                <input type="text" onChange={(e) => setImgurl(e.target.value)} className="border-1 rounded-md w-full p-2 bg-gray-50" placeholder="Enter url for image"/>
+                <button onClick={handleAddBlog} className="px-5 py-2 bg-sky-700 text-white rounded-md hover:bg-sky-600" >Add</button>
             </div>
+
+            </div>
+            
         </>
         
 

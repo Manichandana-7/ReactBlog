@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import NavBar from "./NavBar"
 import { useState } from "react";
 const Addblog = () => {
@@ -5,23 +6,38 @@ const Addblog = () => {
     const [desc,setDesc]=useState("");
     const [imgurl,setImgurl]=useState("");
     const [count,setCount] =useState(0);
-    // const [id,setId] =useState("");
-    function handleAddBlog(){
+    const [likeCount,setlikeCount] =useState(0);
+    const [comments,setComments] =useState([]);
+    function handleAddBlog() {
         if (title && desc && imgurl) {
-            const newBlog = { id:Date.now(),title, desc, imgurl ,count};
-            const existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            const newBlog = { id: Date.now(), title, desc, imgurl, count, likeCount, comments };
+            let existingBlogs = localStorage.getItem("blogs");
+            try {
+                existingBlogs = JSON.parse(existingBlogs);
+                if (!Array.isArray(existingBlogs)) {
+                    existingBlogs = [];  
+                }
+            } catch (error) {
+                console.error("Error parsing blogs from localStorage", error);
+                existingBlogs = []; 
+            }
+ 
             existingBlogs.push(newBlog);
+
             localStorage.setItem("blogs", JSON.stringify(existingBlogs));
-            
             setTitle("");
             setDesc("");
             setImgurl("");
             setCount(0);
+            setComments([]);
+            setlikeCount(0);
+    
             alert("Blog added successfully!");
         } else {
             alert("Please fill all fields.");
         }
-        window.location.href='/'
+    
+        window.location.href = '/';
     }
     return (
         <>

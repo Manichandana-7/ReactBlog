@@ -14,7 +14,7 @@ const BlogList = () => {
     
       {blogs.length > 0 ? (
         blogs.map((blog, index) => (
-          <Blogcard key={index} blogs={blogs} setBlogs={setBlogs} id={blog.id} title={blog.title} desc={blog.desc} imgurl={blog.imgurl} count={blog.count} />
+          <Blogcard key={index} blogs={blogs} setBlogs={setBlogs} id={blog.id} title={blog.title} desc={blog.desc} imgurl={blog.imgurl} count={blog.count} likeCount={blog.likeCount} comments={blog.comments}/>
         ))
       ) : (
         <p>No blogs available. Add some blogs!</p>

@@ -1,5 +1,4 @@
 import { Facebook ,Instagram , Linkedin , Twitter} from 'lucide-react';
-import './footer.css';
 const Footer = () => {
   return (
     <footer className=" bg-sky-700 text-white py-6 mt-10">

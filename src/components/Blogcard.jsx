@@ -41,8 +41,8 @@ const Blogcard = (props) => {
       console.log(editingBlog);
   }
     return (
-      <div className="flex flex-col gap-6 p-6">
-  <div className="flex flex-col md:flex-row items-center p-4 border border-gray-300 rounded-lg shadow-xl bg-sky-50">
+      <div className="grid lg:grid-col-3 gap-6 p-6 w-1/3 ">
+  <div className="flex flex-col md:flex-row items-center p-4 border border-gray-300 rounded-lg shadow-xl bg-sky-50 ">
     <img src={props.imgurl} 
          alt="Blog Image" 
          className="w-36 h-36 object-cover rounded-full md:mr-6"/>
@@ -54,19 +54,20 @@ const Blogcard = (props) => {
           {props.count}
         </p>
       </div>
-      <div className="mt-3 flex justify-between gap-2">
-        <button onClick={() => editBlog(props.id)} 
-                className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500">
-          {editselectBlog && editselectBlog.id === props.id && (
-            <EditBlog bloggy={editselectBlog} />
-          )}Edit
-        </button>
+      <div className="mt-3 flex  gap-6">
+        
 
         <button onClick={() => viewBlog(props.id)} 
                 className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500">
           {selectBlog && selectBlog.id === props.id && (
             <UniqBlog blog={selectBlog} />
           )}View
+        </button>
+        <button onClick={() => editBlog(props.id)} 
+                className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-500">
+          {editselectBlog && editselectBlog.id === props.id && (
+            <EditBlog bloggy={editselectBlog} />
+          )}Edit
         </button>
 
         <button onClick={() => deleteBlog(props.id)} 

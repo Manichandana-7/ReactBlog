@@ -69,7 +69,7 @@ function UniqBlog({ blog }) {
                             size={32}
                             color={blogData.isLiked ? (popEffect ? 'red' : 'red') : 'gray'} 
                             className={`cursor-pointer transition-transform duration-150 ease-in-out ${popEffect ? 'scale-125' : ''}`}
-                            fill={blogData.isLiked ? 'red' : 'none'} 
+                            fill={blogData.isLiked ? 'red' : 'none'} />
                         <p className="mt-2 text-lg text-sky-800">{blogData.likeCount} Likes</p>
                     </div>
 
@@ -101,10 +101,11 @@ function UniqBlog({ blog }) {
                                     </button>
                                 </form>
                                 <div className="space-y-3">
-                                    <h1 className="text-black">Comments</h1>
+                                    
                                     {blogData.comments.length > 0 ? (
                                         blogData.comments.map((comment, index) => (
                                             <div key={index} className="p-4 border-b border-gray-300">
+                                                
                                                 <p className="text-lg text-gray-800">{comment}</p>
                                             </div>
                                         ))

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import UniqBlog from "./uniqBlog";
+import UniqBlog from "./UniqBlog";
 import EditBlog from "./EditBlog";
 import { Eye } from 'lucide-react';
 const Blogcard = (props) => {

@@ -69,7 +69,7 @@ function UniqBlog({ blog }) {
                             size={32}
                             color={blogData.isLiked ? (popEffect ? 'red' : 'red') : 'gray'} 
                             className={`cursor-pointer transition-transform duration-150 ease-in-out ${popEffect ? 'scale-125' : ''}`}
-                            fill={blogData.isLiked ? 'red' : 'none'} 
+                            fill={blogData.isLiked ? 'red' : 'none'} />
                         <p className="mt-2 text-lg text-sky-800">{blogData.likeCount} Likes</p>
                     </div>
 

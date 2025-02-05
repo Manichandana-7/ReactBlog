@@ -11,20 +11,20 @@ function NavBar() {
                 </div>
                 <div className="flex justify-between items-center gap-20">
                     <div className="flex justify-between items-center gap-">
-                        <House color="#ffffff" />
-                        <Link to="/">Home</Link>
+                        
+                        <Link to="/"><House color="#ffffff" />Home</Link>
                     </div>
                     <div className="flex justify-between items-center">
-                        <MessageCirclePlus color="#ffffff" />
-                        <Link to="/addblog">Add Blog</Link>
+                        
+                        <Link to="/addblog"><MessageCirclePlus color="#ffffff" />Add Blog</Link>
                     </div>
                     <div className="flex justify-between items-center">
-                        <Phone color="#ffffff" />
-                        <p>Contact Us</p>
+                        
+                        <p><Phone color="#ffffff" />Contact Us</p>
                     </div>
                     <div className="flex justify-between items-center">
-                        <CircleUserRound color="#ffffff" />
-                        <p>Profile</p>
+                        
+                        <p><CircleUserRound color="#ffffff" />Profile</p>
                     </div>
                 </div>
 
